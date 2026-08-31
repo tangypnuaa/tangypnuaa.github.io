@@ -1,26 +1,30 @@
+/* Hallmark · macrostructure: preserved academic long-form · tone: restrained · anchor hue: slate
+ * pre-emit critique: P5 H4 E4 S5 R5 V3
+ * contrast: pass (40–41) · mobile: pass (34, 49–51)
+ */
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap");
 
 :root {
   color-scheme: light;
-  --page: #f7fafb;
-  --paper: #fbfdfe;
-  --panel: #e5eef3;
-  --panel-strong: #d8e5ec;
-  --ink: #162027;
-  --text: #33424a;
-  --muted: #64757d;
-  --line: #d2dee5;
-  --line-strong: #bccbd3;
-  --accent: #326f82;
-  --accent-strong: #245669;
-  --accent-soft: #dcecf3;
-  --brass: #7a704f;
-  --focus: #5b4c1f;
+  --page: oklch(97.4% 0.005 225);
+  --paper: oklch(99% 0.005 225);
+  --panel: oklch(93.5% 0.006 225);
+  --panel-strong: oklch(89.5% 0.008 225);
+  --ink: oklch(25% 0.014 225);
+  --text: oklch(37% 0.014 225);
+  --muted: oklch(51% 0.012 225);
+  --line: oklch(87% 0.008 225);
+  --line-strong: oklch(78% 0.011 225);
+  --accent: oklch(43% 0.038 225);
+  --accent-strong: oklch(34% 0.032 225);
+  --accent-soft: oklch(93% 0.012 225);
+  --brass: oklch(46% 0.018 80);
+  --focus: oklch(39% 0.045 225);
   --shadow: none;
   --shadow-soft: none;
   --radius: 4px;
   --radius-sm: 3px;
-  --max: 1040px;
+  --max: 1080px;
   --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
   --sans: "IBM Plex Sans", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -31,6 +35,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -38,8 +43,9 @@ body {
   background: var(--page);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.72;
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -107,8 +113,8 @@ strong {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid rgba(210, 222, 229, 0.9);
-  background: rgba(251, 253, 254, 0.96);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
 }
 
 .nav-shell {
@@ -117,7 +123,7 @@ strong {
   justify-content: space-between;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0.85rem 1.25rem;
+  padding: 0.95rem 1.5rem;
   gap: 1.2rem;
 }
 
@@ -181,7 +187,7 @@ strong {
 .section {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 3.8rem 1.25rem;
+  padding: 4.25rem 1.5rem;
   scroll-margin-top: 5rem;
 }
 
@@ -192,12 +198,12 @@ strong {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
+  grid-template-columns: minmax(0, 1fr) 230px;
   align-items: start;
   gap: clamp(2rem, 5vw, 4rem);
   min-height: 0;
-  padding-top: 4rem;
-  padding-bottom: 3.8rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.25rem;
 }
 
 .eyebrow,
@@ -222,18 +228,20 @@ h2 {
   font-family: var(--serif);
   font-weight: 650;
   letter-spacing: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
   text-wrap: balance;
 }
 
 h1 {
   margin-top: 0.46rem;
-  font-size: 3.15rem;
+  font-size: 3.3rem;
   line-height: 1.05;
 }
 
 h2 {
   max-width: 760px;
-  font-size: 1.92rem;
+  font-size: 2rem;
   line-height: 1.22;
 }
 
@@ -256,7 +264,7 @@ h4 {
   max-width: 72ch;
   margin-top: 1.05rem;
   color: var(--text);
-  font-size: 1rem;
+  font-size: 1.06rem;
   line-height: 1.74;
   text-wrap: pretty;
 }
@@ -265,7 +273,7 @@ h4 {
   max-width: 72ch;
   margin-top: 0.42rem;
   color: var(--text);
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   font-weight: 600;
   line-height: 1.45;
 }
@@ -274,7 +282,7 @@ h4 {
   max-width: 72ch;
   margin-top: 0.9rem;
   color: var(--text);
-  font-size: 1rem;
+  font-size: 1.02rem;
 }
 
 .hero-actions {
@@ -297,6 +305,7 @@ h4 {
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
   transition: color 180ms ease;
+  white-space: nowrap;
 }
 
 .button {
@@ -555,17 +564,17 @@ dd {
 }
 
 .publication:hover {
-  background: rgba(251, 253, 254, 0.46);
+  background: var(--paper);
 }
 
 .publication h3 {
   max-width: 92ch;
-  font-size: 1.02rem;
+  font-size: 1.06rem;
 }
 
 .publication p {
   margin-top: 0.32rem;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.55;
 }
 
@@ -670,10 +679,10 @@ dd {
   gap: 1.5rem;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 2rem 1.25rem 3rem;
+  padding: 2rem 1.5rem 3rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 
 .site-footer p + p {
@@ -689,6 +698,10 @@ dd {
   width: 1rem;
   height: 1rem;
   vertical-align: -0.16rem;
+}
+
+.site-footer a {
+  white-space: nowrap;
 }
 
 @media (max-width: 980px) {
@@ -744,8 +757,8 @@ dd {
   .section {
     padding-right: 1rem;
     padding-left: 1rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
   }
 
   .section-tight {
@@ -807,7 +820,7 @@ dd {
 
 @media (max-width: 480px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero-actions {
@@ -834,11 +847,11 @@ dd {
   }
 
   h1 {
-    font-size: 2.42rem;
+    font-size: 2.5rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.72rem;
   }
 
   .hero-summary {
