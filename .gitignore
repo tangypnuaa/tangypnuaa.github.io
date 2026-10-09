@@ -1,1 +1,4 @@
 .github/
+.playwright-cli/
+.impeccable/review/
+.impeccable/tmp/

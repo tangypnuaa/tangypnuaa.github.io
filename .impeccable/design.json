@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-09T16:30:42Z",
+  "title": "Design System: Ying-Peng Tang academic homepage",
+  "extensions": {
+    "colorMeta": {
+      "page": {
+        "role": "neutral",
+        "displayName": "White background"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Heading text"
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Body text"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Supporting text"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Divider"
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Link blue"
+      },
+      "accent-strong": {
+        "role": "primary",
+        "displayName": "Link hover"
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Keyboard focus"
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Text selection"
+      }
+    },
+    "typographyMeta": {
+      "body": {
+        "displayName": "English body",
+        "purpose": "English prose and inherited component typography."
+      },
+      "body-cn": {
+        "displayName": "Chinese body",
+        "purpose": "Local Song Chinese glyphs with the unchanged Latin system stack and Chinese body line height."
+      },
+      "headline": {
+        "displayName": "English headings",
+        "purpose": "Default h1 and h2, with responsive sizes."
+      },
+      "headline-cn": {
+        "displayName": "Chinese headings",
+        "purpose": "Default h1 and h2 with the Chinese weight override."
+      },
+      "label": {
+        "displayName": "Section label",
+        "purpose": "Section labels at the shared minimum text size, including the Software heading."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "anchor-scroll",
+        "value": "smooth",
+        "purpose": "html scroll-behavior for anchor navigation."
+      },
+      {
+        "name": "reduced-motion-anchor-scroll",
+        "value": "auto",
+        "purpose": "html scroll-behavior under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "max-width-980",
+        "value": "980px"
+      },
+      {
+        "name": "max-width-720",
+        "value": "720px"
+      },
+      {
+        "name": "max-width-480",
+        "value": "480px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Text action",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "The existing underlined profile action treatment.",
+      "html": "<a class=\"ds-text-link\" href=\"https://github.com/tangypnuaa\">GitHub</a>",
+      "css": "@font-face { font-family: \"Chinese YaHei\"; src: local(\"Microsoft YaHei\"), local(\"微软雅黑\"), local(\"Microsoft YaHei UI\"); font-display: swap; unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F; } .ds-text-link { display: inline-block; padding: 0; font-family: var(--font-text, \"Chinese YaHei\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", Arial, sans-serif); font-size: calc(17px + var(--font-size-adjust, 0px)); line-height: 1.8; color: var(--accent, #24628a); font-weight: 500; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; white-space: nowrap; } .ds-text-link:hover { color: var(--accent-strong, #164665); } .ds-text-link:focus-visible { outline: 2px solid var(--focus, #24628a); outline-offset: 4px; } @media (max-width: 480px) { .ds-text-link { font-size: var(--body-size, calc(1rem + var(--font-size-adjust, 0px))); } }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-link",
+      "description": "Native Chinese section labels and an English language link, retaining the original destinations.",
+      "html": "<nav class=\"ds-nav\" lang=\"zh-CN\" aria-label=\"主导航\">\r\n        <div class=\"ds-nav-links\">\r\n          <a href=\"#home\">首页</a>\n          <a href=\"#research\">研究方向</a>\n          <a href=\"#publications\">学术论文</a>\n          <a href=\"#projects\">开源软件</a>\n          <a href=\"#awards\">荣誉与服务</a>\n          <a href=\"index.html\" lang=\"en\">English</a>\n        </div>\r\n      </nav>",
+      "css": ":lang(zh-CN) { --font-size-adjust: 1px; --font-text: Helvetica, Tahoma, Arial, STXihei, sans-serif; } @font-face { font-family: \"Chinese YaHei\"; src: local(\"Microsoft YaHei\"), local(\"微软雅黑\"), local(\"Microsoft YaHei UI\"); font-display: swap; unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F; } .ds-nav { display: flex; align-items: center; justify-content: flex-start; max-width: var(--max, 980px); margin: 0 auto; padding: 1rem 1.5rem; gap: 1rem 2rem; font-family: var(--font-text, \"Chinese YaHei\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", Arial, sans-serif); font-size: calc(17px + var(--font-size-adjust, 0px)); line-height: 1.8; } .ds-nav-links { display: flex; flex-wrap: wrap; gap: 0.3rem 1.15rem; } .ds-nav-links a { padding: 0.25rem 0; color: var(--muted, #62686d); font-size: var(--body-size, calc(1.06rem + var(--font-size-adjust, 0px))); font-weight: 500; text-decoration: none; text-decoration-thickness: 1px; text-underline-offset: 0.18em; } .ds-nav-links a:hover { color: var(--accent, #24628a); text-decoration: underline; } .ds-nav a:focus-visible { outline: 2px solid var(--focus, #24628a); outline-offset: 4px; } @media (max-width: 720px) { .ds-nav { align-items: flex-start; flex-direction: column; gap: 0.45rem; padding: 0.8rem 1rem; } .ds-nav-links { gap: 0.25rem 1.1rem; } } @media (max-width: 480px) { .ds-nav { font-size: var(--body-size, calc(1rem + var(--font-size-adjust, 0px))); } } @media (max-width: 980px) { .ds-nav { --body-size: calc(1rem + var(--font-size-adjust, 0px)); } } .ds-nav:lang(zh-CN) { line-height: 1.9; }"
+    },
+    {
+      "name": "Section heading",
+      "kind": "custom",
+      "refersTo": "section-heading",
+      "description": "Plain heading above a thin divider; Chinese uses weight 700.",
+      "html": "<div class=\"ds-section-heading\"><h2>Research</h2></div>",
+      "css": "@font-face { font-family: \"Chinese YaHei\"; src: local(\"Microsoft YaHei\"), local(\"微软雅黑\"), local(\"Microsoft YaHei UI\"); font-display: swap; unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F; } .ds-section-heading { margin-bottom: 1.45rem; } .ds-section-heading h2 { margin: 0; padding-bottom: 0.6rem; border-bottom: 1px solid var(--line, #dfe2e5); color: var(--ink, #252a2e); font-family: var(--font-text, \"Chinese YaHei\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", Arial, sans-serif); font-size: calc(2rem + var(--font-size-adjust, 0px)); font-weight: 650; line-height: 1.3; overflow-wrap: break-word; } .ds-section-heading:lang(zh-CN) h2 { font-weight: 700; } @media (max-width: 980px) { .ds-section-heading h2 { font-size: calc(1.82rem + var(--font-size-adjust, 0px)); } } @media (max-width: 720px) { .ds-section-heading h2 { font-size: calc(1.65rem + var(--font-size-adjust, 0px)); } } @media (max-width: 480px) { .ds-section-heading h2 { font-size: calc(1.72rem + var(--font-size-adjust, 0px)); } }"
+    },
+    {
+      "name": "Research card",
+      "kind": "card",
+      "refersTo": "research-entry",
+      "description": "Compact bordered text card with a short description and related publication links.",
+      "html": "<article class=\"ds-research\">\r\n            <h3>Active learning</h3>\r\n            <p>Selecting informative examples to learn with fewer labels.</p>\r\n            <div class=\"ds-link-row\">\r\n              <a href=\"#pub-2022-neurips\">NeurIPS 2022</a>\r\n              <a href=\"#pub-2025-tpami\">TPAMI 2025</a>\r\n            </div>\r\n          </article>",
+      "css": "@font-face { font-family: \"Chinese YaHei\"; src: local(\"Microsoft YaHei\"), local(\"微软雅黑\"), local(\"Microsoft YaHei UI\"); font-display: swap; unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F; } .ds-research { display: flex; flex-direction: column; padding: 0.65rem 1rem; border: 1px solid var(--line, #dfe2e5); color: var(--text, #3d4246); font-family: var(--font-text, \"Chinese YaHei\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", Arial, sans-serif); font-size: calc(17px + var(--font-size-adjust, 0px)); line-height: 1.8; } .ds-research:lang(zh-CN) { line-height: 1.9; } .ds-research h3 { margin: 0; color: var(--ink, #252a2e); font-size: calc(1.1rem + var(--font-size-adjust, 0px)); font-weight: 650; line-height: 1.45; } .ds-research p { margin: 0.35rem 0 0; max-width: 75ch; line-height: 1.45; } .ds-link-row { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-top: auto; padding-top: 0.35rem; } .ds-link-row a { color: var(--accent, #24628a); font-weight: 500; text-decoration-thickness: 1px; text-underline-offset: 0.18em; } .ds-link-row a:hover { color: var(--accent-strong, #164665); } .ds-link-row a:focus-visible { outline: 2px solid var(--focus, #24628a); outline-offset: 4px; } @media (max-width: 480px) { .ds-research { font-size: var(--body-size, calc(1rem + var(--font-size-adjust, 0px))); } }"
+    },
+    {
+      "name": "Publication entry",
+      "kind": "custom",
+      "refersTo": "publication-entry",
+      "description": "Venue beside the record on desktop and above it on mobile.",
+      "html": "<article class=\"ds-publication\"><div class=\"ds-pub-meta\"><span class=\"ds-venue\">ICML 2026</span></div><div><h3>Federated Data and Feature Selection by Generalized CUR Decomposition.</h3><p><strong>Ying-Peng Tang</strong>, Zhuang Qi, Xiaoli Tang, Wei Zhuo, Sheng-Jun Huang, Han Yu.</p><p>In: Proceedings of the 43rd International Conference on Machine Learning, 2026.</p></div></article>",
+      "css": "@font-face { font-family: \"Chinese YaHei\"; src: local(\"Microsoft YaHei\"), local(\"微软雅黑\"), local(\"Microsoft YaHei UI\"); font-display: swap; unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F; } .ds-publication { display: grid; grid-template-columns: 8.25rem minmax(0, 1fr); gap: 1.2rem; color: var(--text, #3d4246); font-family: var(--font-text, \"Chinese YaHei\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", Arial, sans-serif); } .ds-pub-meta { padding-top: 0.3rem; } .ds-venue { display: block; color: var(--muted, #62686d); font-size: var(--body-size, calc(1.06rem + var(--font-size-adjust, 0px))); font-weight: 600; line-height: 1.3; } .ds-publication h3 { margin: 0; color: var(--ink, #252a2e); font-size: max(calc(1.06rem + var(--font-size-adjust, 0px)), var(--body-size, calc(1.06rem + var(--font-size-adjust, 0px)))); font-weight: 650; line-height: 1.45; } .ds-publication p { margin: 0.45rem 0 0; color: var(--muted, #62686d); font-size: var(--body-size, calc(1.06rem + var(--font-size-adjust, 0px))); line-height: 1.65; } .ds-publication h3 + p { color: var(--text, #3d4246); } .ds-publication strong { color: var(--ink, #252a2e); font-weight: 700; } @media (max-width: 720px) { .ds-publication { grid-template-columns: 1fr; gap: 0.45rem; } .ds-pub-meta { padding: 0; } } @media (max-width: 980px) { .ds-publication { --body-size: calc(1rem + var(--font-size-adjust, 0px)); } }"
+    },
+    {
+      "name": "Software repository link",
+      "kind": "custom",
+      "refersTo": "software-link",
+      "description": "ALiPy repository link using the existing bundled Font Awesome GitHub icon.",
+      "html": "<a class=\"ds-software-link\" href=\"https://github.com/NUAA-AL/alipy\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 496 512\"><path d=\"M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z\"/></svg><span>View on GitHub</span></a>",
+      "css": "@font-face { font-family: \"Chinese YaHei\"; src: local(\"Microsoft YaHei\"), local(\"微软雅黑\"), local(\"Microsoft YaHei UI\"); font-display: swap; unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F; } .ds-software-link { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; justify-self: center; color: var(--accent, #24628a); font-family: var(--font-text, \"Chinese YaHei\", -apple-system, \".SFNSText-Regular\", \"San Francisco\", \"Roboto\", \"Segoe UI\", \"Helvetica Neue\", \"Lucida Grande\", Arial, sans-serif); font-size: calc(17px + var(--font-size-adjust, 0px)); line-height: 1.8; text-decoration-thickness: 1px; text-underline-offset: 0.18em; } .ds-software-link svg { display: block; width: 88px; height: 88px; } .ds-software-link:hover { color: var(--accent-strong, #164665); } .ds-software-link:focus-visible { outline: 2px solid var(--focus, #24628a); outline-offset: 4px; } @media (max-width: 720px) { .ds-software-link { flex-direction: row; justify-self: start; gap: 1.2rem; } .ds-software-link svg { width: 64px; height: 64px; } } @media (max-width: 480px) { .ds-software-link { font-size: var(--body-size, calc(1rem + var(--font-size-adjust, 0px))); } }"
+    }
+  ],
+  "narrative": {
+    "overview": "A plain academic homepage informed by Academic Pages, with its own composition. White space, system sans-serif Latin text, Song Chinese text, blue links, and gentle line and paragraph spacing support reading in both languages.",
+    "rules": [],
+    "dos": [
+      "Do keep every text element at least as large as the profile summary and preserve the English/Chinese line-height distinction.",
+      "Do keep records readable through spacing, plain headings, and conventional links.",
+      "Do preserve the original portrait, registration information, scholarly content, and bilingual links."
+    ],
+    "donts": [
+      "Don't add research diagrams, a research subtitle, decorative monograms, marketing heroes, badges, or decorative animation.",
+      "Don't copy the Academic Pages template or turn this document into a new visual identity."
+    ]
+  }
+}
